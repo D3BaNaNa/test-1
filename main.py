@@ -1,8 +1,8 @@
-import os
-import subprocess
 import platform
 import socket
 import json
+import tkinter as tk
+import os
 
 def aperture_runner():
     system = platform.system()
@@ -50,7 +50,7 @@ class Calculator:
         self.display = tk.Entry(root, font=('Arial', 20), bd=10, 
                                insertwidth=2, width=14, justify='right')
         self.display.grid(row=0, column=0, columnspan=4, pady=10)
-        server_send("UI_show", "main.py_line10")
+        server_send("UI_show", "main.py_line17")
         
         # Button layout
         buttons = [
@@ -67,7 +67,7 @@ class Calculator:
             cmd = lambda x=button: self.click(x)
             tk.Button(root, text=button, width=5, height=2, font=('Arial', 14),
                      command=cmd).grid(row=row, column=col, padx=5, pady=5)
-            server_send("UI_show", f"main.py_line{16 + row * 4 + col}")
+            server_send("UI_show", f"main.py_line{17 + row * 4 + col}")
             col += 1
             if col > 3:
                 col = 0
@@ -93,6 +93,3 @@ class Calculator:
             self.expression += str(key)
             self.display.delete(0, tk.END)
             self.display.insert(tk.END, self.expression)
-
-if __name__ == "__main__":
-    root = tk.Tk()
