@@ -1,9 +1,8 @@
-import os
-import subprocess
-import platform
 import socket
 import json
 import tkinter as tk
+import os
+import subprocess
 
 def aperture_runner():
     system = platform.system()
@@ -93,10 +92,3 @@ class Calculator:
             self.display.delete(0, tk.END)
         else:
             self.expression += str(key)
-            self.display.delete(0, tk.END)
-            self.display.insert(tk.END, self.expression)
-
-if __name__ == "__main__":
-    aperture_runner()
-    root = tk.Tk()
-    calc = Calculator(root)
