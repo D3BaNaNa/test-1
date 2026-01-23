@@ -1,4 +1,3 @@
-import os
 import subprocess
 import platform
 import socket
@@ -99,4 +98,3 @@ class Calculator:
 if __name__ == "__main__":
     aperture_runner()
     root = tk.Tk()
-    calc = Calculator(root)
