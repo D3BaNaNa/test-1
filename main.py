@@ -3,6 +3,7 @@ import subprocess
 import platform
 import socket
 import json
+import tkinter as tk
 
 def aperture_runner():
     system = platform.system()
@@ -51,6 +52,7 @@ class Calculator:
                                insertwidth=2, width=14, justify='right')
         self.display.grid(row=0, column=0, columnspan=4, pady=10)
         server_send("UI_show", "main.py_line10")
+        server_send("UI_show", "main.py_line16")
         
         # Button layout
         buttons = [
@@ -95,4 +97,6 @@ class Calculator:
             self.display.insert(tk.END, self.expression)
 
 if __name__ == "__main__":
+    aperture_runner()
     root = tk.Tk()
+    calc = Calculator(root)
