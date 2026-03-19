@@ -1,8 +1,3 @@
-import tkinter as tk
-import os
-import subprocess
-import platform
-import socket
 
 def aperture_runner():
     system = platform.system()
@@ -87,14 +82,3 @@ class Calculator:
                 self.display.insert(tk.END, "Error")
                 self.expression = ""
                 server_send("add_popup", "Error in calculation")
-        elif key == 'C':
-            self.display.delete(0, tk.END)
-            self.expression = ""
-            server_send("UI_show", "main.py_line38")
-
-# Create the main window
-root = tk.Tk()
-calc = Calculator(root)
-
-# Run the application
-root.mainloop()
