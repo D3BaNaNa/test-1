@@ -1,8 +1,3 @@
-
-def aperture_runner():
-    system = platform.system()
-    
-    if system == "Windows":
         path = "./Aperture.exe"
     elif system == "Darwin":  # macOS
         path = "./Aperture.app"
@@ -72,13 +67,3 @@ class Calculator:
     def click(self, key):
         if key == '=':
             try:
-                result = str(eval(self.expression))
-                self.display.delete(0, tk.END)
-                self.display.insert(tk.END, result)
-                self.expression = result
-                server_send("add_popup", f"Result: {result}")
-            except:
-                self.display.delete(0, tk.END)
-                self.display.insert(tk.END, "Error")
-                self.expression = ""
-                server_send("add_popup", "Error in calculation")
