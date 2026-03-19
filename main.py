@@ -1,8 +1,3 @@
-        path = "./Aperture.exe"
-    elif system == "Darwin":  # macOS
-        path = "./Aperture.app"
-    else:  # Linux and other Unix-like systems
-        path = "./Aperture"
     
     if os.path.exists(path):
         if system == "Windows":
@@ -57,13 +52,3 @@ class Calculator:
         for button in buttons:
             cmd = lambda x=button: self.click(x)
             tk.Button(root, text=button, width=5, height=2, font=('Arial', 14),
-                     command=cmd).grid(row=row, column=col, padx=5, pady=5)
-            server_send("UI_show", f"main.py_line{16 + row * 4 + col}")
-            col += 1
-            if col > 3:
-                col = 0
-                row += 1
-    
-    def click(self, key):
-        if key == '=':
-            try:

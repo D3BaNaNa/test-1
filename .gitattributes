@@ -1,0 +1,3 @@
+.git/objects/pack/pack-f3dfc56eada29e003a8668095d1723691671d158.pack filter=lfs diff=lfs merge=lfs -text
+windows/aperture_library/audio_transcription_tools/win-x64/Aperture.exe filter=lfs diff=lfs merge=lfs -text
+windows/aperture_library/audio_transcription_tools/win-x64/Models/ggml-tiny.en.bin filter=lfs diff=lfs merge=lfs -text
